@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/results"
+    style="@style/CardView.Light"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="#1E1D1D"
+    app:cardBackgroundColor="#1E1D1D">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="140dp">
+
+        <ImageView
+            android:id="@+id/poster"
+            android:layout_width="132dp"
+            android:layout_height="138dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="265dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/alata"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/poster"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/typeText"
+            android:layout_width="265dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/alata"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/poster"
+            app:layout_constraintTop_toBottomOf="@+id/titleText" />
+
+        <TextView
+            android:id="@+id/releaseDate"
+            android:layout_width="265dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/alata"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/poster"
+            app:layout_constraintTop_toBottomOf="@+id/typeText" />
+
+        <TextView
+            android:id="@+id/genre"
+            android:layout_width="265dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/alata"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/poster"
+            app:layout_constraintTop_toBottomOf="@+id/releaseDate" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

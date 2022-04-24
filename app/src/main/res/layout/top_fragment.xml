@@ -5,4 +5,74 @@
     android:id="@+id/topLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Top"/>
+    android:background="#1E1D1D"
+    tools:context=".Top">
+
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="412dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif"
+        android:text="What's On TV?"
+        android:textAlignment="center"
+        android:textColor="#651FFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/genresSpinner"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#651FFF"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/genres" />
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="307dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:background="#651FFF"
+        android:fontFamily="@font/alata"
+        android:text="Search"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/genresSpinner" />
+
+    <TextView
+        android:id="@+id/genres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/alata"
+        android:text="Genres"
+        android:textAlignment="textStart"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appName" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="206dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
