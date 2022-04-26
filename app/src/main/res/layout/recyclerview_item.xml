@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/results"
     style="@style/CardView.Light"
     android:layout_width="match_parent"
     android:layout_height="150dp"
-    android:background="#1E1D1D"
-    app:cardBackgroundColor="#1E1D1D">
+    app:cardBackgroundColor="@color/dkGrey">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/card"
         android:layout_width="match_parent"
-        android:layout_height="140dp">
+        android:layout_height="140dp"
+        android:background="@color/dkGrey">
 
         <ImageView
             android:id="@+id/poster"

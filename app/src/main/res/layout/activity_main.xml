@@ -11,17 +11,21 @@
         android:name="com.nshute.cis436p4.Top"
         android:layout_width="411dp"
         android:layout_height="206dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomFragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/top_fragment" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/bottomFragment"
         android:name="com.nshute.cis436p4.Bottom"
         android:layout_width="414dp"
         android:layout_height="533dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topFragment" />
+        app:layout_constraintTop_toBottomOf="@+id/topFragment"
+        tools:layout="@layout/bottom_fragment" />
 </androidx.constraintlayout.widget.ConstraintLayout>

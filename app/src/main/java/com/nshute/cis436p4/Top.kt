@@ -36,11 +36,6 @@ class Top : Fragment(), AdapterView.OnItemSelectedListener {
         viewModel = ViewModelProvider(this).get(TopViewModel::class.java)
 
         var searchButtonView: Button? = view?.findViewById(R.id.searchButton)
-        //if (searchButtonView != null) {
-        //  searchButtonView.setOnClickListener {
-        //    GlobalScope.async {
-        //  }
-        //}
 
         val spinner = view?.findViewById<Spinner>(R.id.genresSpinner)
         val adapter = ArrayAdapter.createFromResource(
