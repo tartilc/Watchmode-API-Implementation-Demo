@@ -81,7 +81,7 @@ class MainActivity: AppCompatActivity(), AdapterView.OnItemSelectedListener {
             val client = OkHttpClient().newBuilder()
                 .build()
             val request: Request = Request.Builder
-                .url("https://api.watchmode.com/v1/sources/?apiKey=YOUR_API_KEY'")
+                .url("https://api.watchmode.com/v1/title/345534/details/?apiKey={YOUR_API_KEY}&append_to_response=sources'")
                 .method("GET", null)
                 .addHeader("Content-Type", "application/json")
                 .addHeader("x-api-key", "tLJlKtXy2JBWzDRbaAPbZoQdxx2tbOxU2ZsJi87F")
