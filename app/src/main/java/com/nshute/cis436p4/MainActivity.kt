@@ -16,6 +16,7 @@ import org.json.JSONArray
 import org.json.JSONException
 import java.io.IOException
 import java.lang.ref.WeakReference
+import okhttp3.Request.Builder as RequestBuilder
 
 class MainActivity: AppCompatActivity(), AdapterView.OnItemSelectedListener {
     var recyclerView: RecyclerView? = null
@@ -80,7 +81,7 @@ class MainActivity: AppCompatActivity(), AdapterView.OnItemSelectedListener {
         override fun doInBackground(params: Array<String?>): String? {
             val client = OkHttpClient().newBuilder()
                 .build()
-            val request: Request = Request.Builder
+            val request: Request = Request.Builder()
                 .url("https://api.watchmode.com/v1/title/345534/details/?apiKey={YOUR_API_KEY}&append_to_response=sources'")
                 .method("GET", null)
                 .addHeader("Content-Type", "application/json")

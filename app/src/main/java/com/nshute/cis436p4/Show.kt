@@ -4,65 +4,18 @@ import org.json.JSONException
 import org.json.JSONObject
 
 class Show {
-    private var idNum = " "
-        get() = idNum
-        set(value) {
-            field = value
-        }
-
     private var title = " "
-        get() = title
-        set(value) {
-            field = value
-        }
-
     private var plot = " "
-        get() = plot
-        set(value) {
-            field = value
-        }
-
     private var type = " "
-        get() = type
-        set(value) {
-            field = value
-        }
-
     private var run_timeMins = " "
-        get() = run_timeMins
-        set(value) {
-            field = value
-        }
-
     private var release_date = " "
-        get() = release_date
-        set(value) {
-            field = value
-        }
-
     private var genre_name = " "
-        get() = genre_name
-        set(value) {
-            field = value
-        }
-
     private var rating = " "
-        get() = rating
-        set(value) {
-            field = value
-        }
-
     private var poster = " "
-        get() = poster
-        set(value) {
-            field = value
-        }
+    private var org_lang = " "
 
     fun Show(jsonObject: JSONObject) {
         try {
-            if (jsonObject.has("id")) {
-                idNum = jsonObject["idNum"].toString()
-            } else idNum = ""
             if (jsonObject.has("title")) {
                 title = jsonObject["title"].toString()
             } else title = ""
@@ -75,6 +28,9 @@ class Show {
             if (jsonObject.has("run_timeMins")) {
                 run_timeMins = jsonObject["run_timeMins"].toString()
             } else run_timeMins = ""
+            if (jsonObject.has("release_date")) {
+                release_date = jsonObject["release_date"].toString()
+            } else release_date = ""
             if (jsonObject.has("genre_name")) {
                 genre_name = jsonObject["genre_name"].toString()
             } else genre_name = ""
@@ -84,8 +40,28 @@ class Show {
             if (jsonObject.has("poster")) {
                 poster = jsonObject["poster"].toString()
             } else poster = ""
+            if (jsonObject.has("original_language")) {
+                org_lang = jsonObject["original_language"].toString()
+            } else org_lang = ""
         } catch (e: JSONException) {
             e.printStackTrace()
         }
     }
+    fun setTitle(value:String){ this.title = value }
+    fun setPlot(value:String){ this.plot = value }
+    fun setType(value:String){ this.type = value }
+    fun setRunTimeMins(value:String){ this.run_timeMins = value }
+    fun setReleaseDate(value:String){ this.release_date = value }
+    fun setGenreName(value:String){ this.genre_name = value }
+    fun setRating(value:String){ this.genre_name = value }
+    fun setOrgLang(value:String){ this.org_lang = value }
+
+    fun getTitle(value:String):String{ return title}
+    fun getPlot(value:String):String{ return plot }
+    fun getType(value:String):String{ return type }
+    fun getRunTimeMins(value:String):String{ return run_timeMins }
+    fun getReleaseDate(value:String):String{ return release_date }
+    fun getGenreName(value:String):String{ return genre_name }
+    fun getRating(value:String):String{ return rating}
+    fun getOrgLang(value:String):String{ return org_lang }
 }
