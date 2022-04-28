@@ -44,6 +44,6 @@ class Bottom : Fragment() {
     }
 
     fun setGenre(genre:String){
-        type = genre
+        //type = genre
     }
 }
