@@ -1,11 +1,11 @@
 package com.nshute.cis436p4
 
-import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 
@@ -23,7 +23,10 @@ class ListTitlesAdapter(val list: List<TitleHandler>): RecyclerView.Adapter<List
         holder.mediaYear.text = itemViewModel.year.toString()
         holder.mediaType.text = itemViewModel.type
         holder.mediaPlot.text = itemViewModel.plot
-        Picasso.with(holder.mediaTitle.context).load(itemViewModel.poster).into(holder.mediaPoster)
+        Picasso.get().load("@drawable/android.jpg").into(holder.mediaPoster)
+//        holder.itemView.setOnClickListener {
+//            Toast.makeText(this, holder.mediaTitle.text, Toast.LENGTH_SHORT).show()
+//        }
     }
 
     override fun getItemCount(): Int {
