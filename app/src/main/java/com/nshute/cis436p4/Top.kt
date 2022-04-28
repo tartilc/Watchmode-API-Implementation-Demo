@@ -7,13 +7,12 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.top_fragment.*
 
 class Top : Fragment(), AdapterView.OnItemSelectedListener {
 
     var genre = "All"
-    val spinner = view?.findViewById<Spinner>(R.id.genresSpinner)
+    val spinner = view?.findViewById<Spinner>(R.id.genreSpinner)
 
     companion object {
         fun newInstance() = Top()

@@ -26,7 +26,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
-        android:id="@+id/genresSpinner"
+        android:id="@+id/genreSpinner"
         android:layout_width="328dp"
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
@@ -57,7 +57,7 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/genresSpinner" />
+        app:layout_constraintTop_toBottomOf="@+id/genreSpinner" />
 
     <TextView
         android:id="@+id/genres"
@@ -73,7 +73,7 @@
         android:textSize="28sp"
         android:textStyle="bold"
         android:theme="@style/Theme.CIS436P4"
-        app:layout_constraintBottom_toTopOf="@+id/genresSpinner"
+        app:layout_constraintBottom_toTopOf="@+id/genreSpinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appName" />
