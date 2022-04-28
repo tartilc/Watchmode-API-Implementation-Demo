@@ -24,11 +24,11 @@ class ShowAdapter {
         wrMA = WeakReference(mainActivity)
     }
 
-    fun setShows(shows: MutableList<Show>?) {
-        shows_list = shows
+    fun setCats(cats: MutableList<Show>?) {
+        shows_list = cats
     }
 
-    fun getShows(): List<Show>? {
+    fun getTheCats(): List<Show>? {
         return shows_list
     }
 
@@ -71,6 +71,7 @@ class ShowAdapter {
     }
 
     fun addCat(catTemp: Show) {
+        shows_list!!.add(catTemp)
     }
 
     class ShowViewHolder internal constructor(itemView: View) :
