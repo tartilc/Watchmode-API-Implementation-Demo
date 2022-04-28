@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity: AppCompatActivity() {
+class MainActivity: AppCompatActivity(), Communicator {
     var recyclerView: RecyclerView? = null
     var breeds: List<String>? = null
 
@@ -37,6 +37,20 @@ class MainActivity: AppCompatActivity() {
         val fm: FragmentManager = supportFragmentManager
         fm.beginTransaction().replace(R.id.topFragment, top).commit()
         fm.beginTransaction().replace(R.id.bottomFragment, bottom).commit()
+    }
+
+    override fun passData(ediTextInput: String) {
+        val bundle = Bundle()
+        bundle.putString("message", ediTextInput)
+
+        val transaction = this.supportFragmentManager.beginTransaction()
+
+        // Created instance of fragment2
+        val bottom = Bottom()
+
+        bottom.arguments = bundle
+        transaction.replace(R.id.bottomFragment,bottom)
+        transaction.commit()
     }
 }
 

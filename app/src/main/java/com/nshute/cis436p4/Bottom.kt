@@ -22,6 +22,7 @@ class Bottom : Fragment() {
     lateinit var recyclerView: RecyclerView
     lateinit var retrofit: Retrofit
     lateinit var listTitles: List<TitleHandler>
+    var message:String? =""
 
     companion object {
         fun newInstance() = Bottom()
@@ -71,33 +72,37 @@ class Bottom : Fragment() {
 
         //genre is sent as message in id # form between activities via intents
         //val apiList = apiService.getTitles(message.toString())
-        val apiList = apiService.getTitles("2")
+        message = arguments?.getString("message")
 
-        apiList.enqueue(object : Callback<ListTitlesHandler> {
-            //use callBack for multi threaded call
-            override fun onFailure(
-                call: Call<ListTitlesHandler>,
-                t: Throwable
-            ) {//is like error checking for failed response within network
-                Log.e("ERROR", "FAILED")
-            }
+        val apiList = message?.let { apiService.getTitles(it) }
 
-            override fun onResponse(
-                call: Call<ListTitlesHandler>,
-                response: Response<ListTitlesHandler>
-            ) {// if this is hit
-                listTitles = response.body()?.titles
-                    ?: emptyList()//needs null check  --> if respnse body null? id not continue
-                //val random = listTitles.random()
-                //titleTextView.text = random.title
-                //yearTextView.text = random.year.toString()
-                //typeTextView.text = random.type
+        if (apiList != null) {
+            apiList.enqueue(object : Callback<ListTitlesHandler> {
+                //use callBack for multi threaded call
+                override fun onFailure(
+                    call: Call<ListTitlesHandler>,
+                    t: Throwable
+                ) {//is like error checking for failed response within network
+                    Log.e("ERROR", "FAILED")
+                }
 
-                recyclerView.layoutManager = LinearLayoutManager(context)
-                val adapter = ListTitlesAdapter(listTitles)
-                recyclerView.adapter = adapter
-            }
-        })
+                override fun onResponse(
+                    call: Call<ListTitlesHandler>,
+                    response: Response<ListTitlesHandler>
+                ) {// if this is hit
+                    listTitles = response.body()?.titles
+                        ?: emptyList()//needs null check  --> if respnse body null? id not continue
+                    //val random = listTitles.random()
+                    //titleTextView.text = random.title
+                    //yearTextView.text = random.year.toString()
+                    //typeTextView.text = random.type
+
+                    recyclerView.layoutManager = LinearLayoutManager(context)
+                    val adapter = ListTitlesAdapter(listTitles)
+                    recyclerView.adapter = adapter
+                }
+            })
+        }
 
 
 

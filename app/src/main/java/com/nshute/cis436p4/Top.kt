@@ -19,8 +19,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 class Top : Fragment() {
-//, AdapterView.OnItemSelectedListener
+    //, AdapterView.OnItemSelectedListener
     //var genre = "All"
+    private lateinit var communicator: Communicator
     lateinit var retrofit: Retrofit
     lateinit var genreList: List<GenreHandler>
     lateinit var button: Button
@@ -36,6 +37,8 @@ class Top : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        communicator = activity as Communicator
+
         return inflater.inflate(R.layout.top_fragment, container, false)
     }
 
@@ -43,44 +46,46 @@ class Top : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(TopViewModel::class.java)
 
-        //var searchButtonView: Button? = view?.findViewById(R.id.searchButton)
         button = view?.findViewById(R.id.searchButton)!!
         spinner = view?.findViewById(R.id.genreSpinner)!!
 
-        button.setOnClickListener{
+        button.setOnClickListener {
             val genre = spinner.selectedItem as GenreHandler
+
+            communicator.passData(genre.id)
 
             /*
             val intent = Intent(this, NopeSuggestions:: class.java).apply {
                 putExtra("EXTRA", genre.id)
             }
             startActivity(intent)
-
              */
         }
 
         retrofit = Retrofit.Builder()
-            .baseUrl( "https://api.watchmode.com/v1/")//base url
-            .addConverterFactory(GsonConverterFactory.create())//converts with Gson --> needs some converter
+            .baseUrl("https://api.watchmode.com/v1/")
+            .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        val apiService = retrofit.create(APIService::class.java)//interface for APIService
+        val apiService = retrofit.create(APIService::class.java)
         val apiList = apiService.getGenre()
 
-        apiList.enqueue(object : Callback<List<GenreHandler>> {//use callBack for multi threaded call
-        override fun onFailure(call: Call<List<GenreHandler>>, t: Throwable)
-        {//is like error checking for failed response within network
-            Log.e("ERROR", "FAILED")
-        }
+        apiList.enqueue(object : Callback<List<GenreHandler>> {
+            override fun onFailure(call: Call<List<GenreHandler>>, t: Throwable) {
+                Log.e("ERROR", "FAILED")
+            }
 
-            override fun onResponse(call: Call<List<GenreHandler>>, response: Response<List<GenreHandler>>)
-            {// if this is hit
-                genreList = response.body()!!//needs null check  --> if respnse body null? id not continue
+            override fun onResponse(
+                call: Call<List<GenreHandler>>,
+                response: Response<List<GenreHandler>>
+            ) {
+                genreList = response.body()!!
                 //arrayAdapter()
 
                 val spinnerAdapter: ArrayAdapter<GenreHandler>? = context?.let {
                     ArrayAdapter<GenreHandler>(
-                        it, android.R.layout.simple_spinner_item, genreList)
+                        it, android.R.layout.simple_spinner_item, genreList
+                    )
                 }
 
                 if (spinnerAdapter != null) {
@@ -152,17 +157,5 @@ class Top : Fragment() {
         //spinner.setEnabled(true)
         //spinner.adapter = adapter
     }
-
-    /*
-    override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-        genre = spinner?.selectedItem.toString()
-    }
-
-    override fun onNothingSelected(p0: AdapterView<*>?) {
-        genre = "All"
-    }
-
-     */
-
-     */
+    */
 }
