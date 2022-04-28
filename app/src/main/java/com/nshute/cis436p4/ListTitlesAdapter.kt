@@ -23,7 +23,7 @@ class ListTitlesAdapter(val list: List<TitleHandler>): RecyclerView.Adapter<List
         holder.mediaYear.text = itemViewModel.year.toString()
         holder.mediaType.text = itemViewModel.type
         holder.mediaPlot.text = itemViewModel.plot
-        Picasso.with(holder.mediaTitle.getContext()).load(itemViewModel.poster).into(holder.mediaPoster);
+        Picasso.with(holder.mediaTitle.context).load(itemViewModel.poster).into(holder.mediaPoster)
     }
 
     override fun getItemCount(): Int {

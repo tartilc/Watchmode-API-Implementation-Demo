@@ -15,5 +15,4 @@ data class ListTitlesHandler(
 
     @SerializedName("total_pages")
     val totalPages: Int
-
     )
