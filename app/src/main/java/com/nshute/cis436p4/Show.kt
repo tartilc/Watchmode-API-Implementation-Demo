@@ -3,7 +3,7 @@ package com.nshute.cis436p4
 import org.json.JSONException
 import org.json.JSONObject
 
-class Show {
+class Show(jsonObject: JSONObject) {
     private var title = " "
     private var plot = " "
     private var type = " "
