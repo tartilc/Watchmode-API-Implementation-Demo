@@ -22,6 +22,8 @@ import java.net.HttpURLConnection
 
 class Bottom : Fragment() {
 
+    var genreBottom = "All"
+
     companion object {
         fun newInstance() = Bottom()
     }
@@ -39,5 +41,9 @@ class Bottom : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(BottomViewModel::class.java)
 
+    }
+
+    fun setGenre(genre:String){
+        type = genre
     }
 }

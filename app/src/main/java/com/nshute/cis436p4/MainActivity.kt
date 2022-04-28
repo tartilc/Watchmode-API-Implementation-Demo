@@ -16,7 +16,6 @@ import org.json.JSONArray
 import org.json.JSONException
 import java.io.IOException
 import java.lang.ref.WeakReference
-import okhttp3.Request.Builder as RequestBuilder
 
 class MainActivity: AppCompatActivity(), AdapterView.OnItemSelectedListener {
     var recyclerView: RecyclerView? = null
@@ -30,12 +29,17 @@ class MainActivity: AppCompatActivity(), AdapterView.OnItemSelectedListener {
     var spinner: Spinner? = null
     var buttonClear: Button? = null
 
+    val top: Fragment = Top()
+    val bottom: Fragment = Bottom()
+
+
+    companion object {
+        fun newInstance() = MainActivity()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val top: Fragment = Top()
-        val bottom: Fragment = Bottom()
 
         val fm: FragmentManager = supportFragmentManager
         fm.beginTransaction().replace(R.id.topFragment, top).commit()
@@ -106,5 +110,9 @@ class MainActivity: AppCompatActivity(), AdapterView.OnItemSelectedListener {
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
+    }
+
+    fun displayTitles(genre: String){
+        (bottom as Bottom).setGenre(genre)
     }
 }

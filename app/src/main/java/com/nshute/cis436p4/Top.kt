@@ -4,19 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import android.text.method.ScrollingMovementMethod
-import android.widget.*
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
-import org.json.JSONObject
-import java.io.InputStreamReader
-import java.net.HttpURLConnection
-import java.net.URL
+import kotlinx.android.synthetic.main.top_fragment.*
 
 class Top : Fragment(), AdapterView.OnItemSelectedListener {
+
+    var genre = "All"
+    val spinner = view?.findViewById<Spinner>(R.id.genresSpinner)
 
     companion object {
         fun newInstance() = Top()
@@ -37,7 +34,6 @@ class Top : Fragment(), AdapterView.OnItemSelectedListener {
 
         var searchButtonView: Button? = view?.findViewById(R.id.searchButton)
 
-        val spinner = view?.findViewById<Spinner>(R.id.genresSpinner)
         val adapter = ArrayAdapter.createFromResource(
             this.requireActivity(),
             R.array.genres,
@@ -46,16 +42,18 @@ class Top : Fragment(), AdapterView.OnItemSelectedListener {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         if (spinner != null) {
             spinner.adapter = adapter
-        };
-        if (spinner != null) {
             spinner.onItemSelectedListener = this
+        }
+        if (searchButton.isPressed == true){
+            (activity as MainActivity?)?.displayTitles(genre)
         }
     }
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+        genre = spinner?.selectedItem.toString()
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
+        genre = "All"
     }
-
 }
