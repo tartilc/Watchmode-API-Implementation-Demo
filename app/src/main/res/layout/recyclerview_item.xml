@@ -14,7 +14,7 @@
         android:background="@color/dkGrey">
 
         <ImageView
-            android:id="@+id/poster"
+            android:id="@+id/posterView"
             android:layout_width="132dp"
             android:layout_height="138dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +32,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/poster"
+            app:layout_constraintStart_toEndOf="@+id/posterView"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -46,7 +46,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/poster"
+            app:layout_constraintStart_toEndOf="@+id/posterView"
             app:layout_constraintTop_toBottomOf="@+id/titleText" />
 
         <TextView
@@ -60,7 +60,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/poster"
+            app:layout_constraintStart_toEndOf="@+id/posterView"
             app:layout_constraintTop_toBottomOf="@+id/typeText" />
 
         <TextView
@@ -74,7 +74,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/poster"
+            app:layout_constraintStart_toEndOf="@+id/posterView"
             app:layout_constraintTop_toBottomOf="@+id/releaseDate" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

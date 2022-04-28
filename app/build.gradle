@@ -1,12 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-android-extensions'
 }
-
-//Picasso
-//def picassoVersion = "2.71828"
-//implementation "com.squareup.picasso:picasso:$picassoVersion"
 
 android {
     compileSdk 32

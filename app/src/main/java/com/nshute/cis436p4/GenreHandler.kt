@@ -13,12 +13,8 @@ data class GenreHandler(
     @SerializedName("tmdb_id")
     val tmdbId: String,
 
-)
-{
+){
     override fun toString(): String {
         return name
     }
 }
-
-
-//only use int if i am going to be adding numbers

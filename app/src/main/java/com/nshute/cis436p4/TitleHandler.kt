@@ -10,8 +10,8 @@ data class TitleHandler(
     @SerializedName("type")
     val type: String,
 
-    @SerializedName("genre")
-    val genre: String,
+    @SerializedName("poster")
+    val poster: String,
 
     @SerializedName("year")
     val year: Int

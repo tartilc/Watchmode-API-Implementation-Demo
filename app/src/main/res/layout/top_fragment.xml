@@ -28,10 +28,9 @@
     <Spinner
         android:id="@+id/genreSpinner"
         android:layout_width="300dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:entries="@array/genres"
         android:minHeight="48dp"
         android:textAlignment="center"
         android:textSize="40sp"
@@ -39,7 +38,8 @@
         app:layout_constraintBottom_toTopOf="@+id/searchButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/genres" />
+        app:layout_constraintTop_toBottomOf="@+id/genres"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/searchButton"

@@ -100,8 +100,6 @@ class Top : Fragment() {
         /*
         val adapter: ArrayAdapter<GenreHandler> =
             ArrayAdapter<GenreHandler>(this.requireActivity(), android.R.layout.simple_spinner_item, genreList)
-
-
          */
 
         /*
@@ -110,7 +108,6 @@ class Top : Fragment() {
             genreList,
             android.R.layout.simple_spinner_item
         )
-
          */
 
         /*
@@ -123,8 +120,7 @@ class Top : Fragment() {
         if (searchButton.isPressed == true){
             //(activity as MainActivity?)?.displayTitles(genre)
         }
-
-         */
+        */
     }
 
     /*
@@ -132,10 +128,9 @@ class Top : Fragment() {
         /*
         val adapter: ArrayAdapter<String> =
             ArrayAdapter<String>(activity, android.R.layout.simple_spinner_item, genreList)
-
          */
-        val genreList:List<GenreHandler> = genreList.toList()
 
+        val genreList:List<GenreHandler> = genreList.toList()
         val adapter = activity?.let {
             ArrayAdapter<String>(
                 it,
@@ -148,14 +143,13 @@ class Top : Fragment() {
         val adapter = ArrayAdapter<GenreHandler>(this,
             android.R.layout.simple_spinner_item,
             genreList.toList())
-
          */
 
-        //var adapter = ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, genreList)//look into overriding simple style
+        var adapter = ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, genreList)//look into overriding simple style
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner.setAdapter(adapter)
-        //spinner.setEnabled(true)
-        //spinner.adapter = adapter
+        spinner.setEnabled(true)
+        spinner.adapter = adapter
     }
     */
 }

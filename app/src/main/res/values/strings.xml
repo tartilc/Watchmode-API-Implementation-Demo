@@ -3,55 +3,9 @@
     <string name="title_activity_watchman">Watchman</string>
 
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="searchBttn">Search</string>
     <string name="genres">Genres:</string>
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="whatsOn">What\'s on TV?</string>
-
-
-    <string-array name="genres">
-        <item>All</item>
-        <item>Action</item>
-        <item>Action &amp; Adventure</item>
-        <item>Adult</item>
-        <item>Adventure</item>
-        <item>Animation</item>
-        <item>Anime</item>
-        <item>Biography</item>
-        <item>Comedy</item>
-        <item>Crime</item>
-        <item>Documentary</item>
-        <item>Drama</item>
-        <item>Family</item>
-        <item>Fantasy</item>
-        <item>Food</item>
-        <item>Game Show</item>
-        <item>History</item>
-        <item>Horror</item>
-        <item>Kids</item>
-        <item>Music</item>
-        <item>Musical</item>
-        <item>Mystery</item>
-        <item>Nature</item>
-        <item>News</item>
-        <item>Reality</item>
-        <item>Romance</item>
-        <item>Sci-Fi &amp; Fantasy</item>
-        <item>Science Fiction</item>
-        <item>Soap</item>
-        <item>Sports</item>
-        <item>Supernatural</item>
-        <item>Talk</item>
-        <item>Thriller</item>
-        <item>Travel</item>
-        <item>TV Movie</item>
-        <item>War</item>
-        <item>War &amp; Politics</item>
-        <item>Western</item>
-    </string-array>
 </resources>
