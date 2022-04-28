@@ -64,7 +64,7 @@
             app:layout_constraintTop_toBottomOf="@+id/typeText" />
 
         <TextView
-            android:id="@+id/genre"
+            android:id="@+id/genreText"
             android:layout_width="265dp"
             android:layout_height="25dp"
             android:layout_marginStart="6dp"

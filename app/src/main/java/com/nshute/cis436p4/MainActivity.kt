@@ -1,21 +1,14 @@
 package com.nshute.cis436p4
 
-import android.content.Context
-import android.os.AsyncTask
+import android.R.attr
 import android.os.Bundle
-import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import org.json.JSONArray
-import org.json.JSONException
-import java.io.IOException
-import java.lang.ref.WeakReference
+
 
 class MainActivity: AppCompatActivity() {
     var recyclerView: RecyclerView? = null
