@@ -119,4 +119,4 @@ class MainActivity: AppCompatActivity() {
         (bottom as Bottom).setGenre(genre)
     }
 
-     */
+*/
