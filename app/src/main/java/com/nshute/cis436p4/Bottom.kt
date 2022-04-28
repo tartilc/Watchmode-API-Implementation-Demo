@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import android.text.method.ScrollingMovementMethod
 import android.widget.*
+import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -21,7 +23,7 @@ import java.io.InputStreamReader
 import java.net.HttpURLConnection
 
 class Bottom : Fragment() {
-
+    var recyclerView: RecyclerView? = null
     var genreBottom = "All"
 
     companion object {
@@ -44,6 +46,6 @@ class Bottom : Fragment() {
     }
 
     fun setGenre(genre:String){
-        type = genre
+        binding.type = genre
     }
 }
