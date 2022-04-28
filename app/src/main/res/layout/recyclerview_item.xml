@@ -5,13 +5,14 @@
     style="@style/CardView.Light"
     android:layout_width="match_parent"
     android:layout_height="150dp"
-    app:cardBackgroundColor="@color/dkGrey">
+    app:cardCornerRadius="15dp"
+    app:cardBackgroundColor="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="140dp"
-        android:background="@color/dkGrey">
+        android:background="@color/ltGrey">
 
         <ImageView
             android:id="@+id/posterView"
@@ -24,12 +25,14 @@
         <TextView
             android:id="@+id/titleText"
             android:layout_width="265dp"
-            android:layout_height="25dp"
+            android:layout_height="20dp"
             android:layout_marginStart="6dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/alata"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/posterView"
@@ -38,12 +41,14 @@
         <TextView
             android:id="@+id/typeText"
             android:layout_width="265dp"
-            android:layout_height="25dp"
+            android:layout_height="20dp"
             android:layout_marginStart="6dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/alata"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/posterView"
@@ -52,29 +57,34 @@
         <TextView
             android:id="@+id/releaseDate"
             android:layout_width="265dp"
-            android:layout_height="25dp"
+            android:layout_height="20dp"
             android:layout_marginStart="6dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/alata"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/posterView"
             app:layout_constraintTop_toBottomOf="@+id/typeText" />
 
         <TextView
-            android:id="@+id/genreText"
+            android:id="@+id/plotText"
             android:layout_width="265dp"
-            android:layout_height="25dp"
+            android:layout_height="35dp"
             android:layout_marginStart="6dp"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/alata"
             android:textColor="@android:color/white"
             android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/posterView"
             app:layout_constraintTop_toBottomOf="@+id/releaseDate" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

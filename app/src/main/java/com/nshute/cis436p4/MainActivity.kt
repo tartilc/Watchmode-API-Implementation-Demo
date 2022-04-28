@@ -38,16 +38,4 @@ class MainActivity: AppCompatActivity(), Communicator {
         transaction.replace(R.id.bottomFragment,bottom)
         transaction.commit()
     }
-
-    /*
-    override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-    }
-
-    override fun onNothingSelected(p0: AdapterView<*>?) {
-    }
-
-    fun displayTitles(genre: String){
-        (bottom as Bottom).setGenre(genre)
-    }
-    */
 }

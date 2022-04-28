@@ -14,5 +14,8 @@ data class TitleHandler(
     val poster: String,
 
     @SerializedName("year")
-    val year: Int
+    val year: Int,
+
+    @SerializedName("plot")
+    val plot: String
 )

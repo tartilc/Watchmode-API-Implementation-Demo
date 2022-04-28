@@ -1,5 +1,6 @@
 package com.nshute.cis436p4
 
+import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,11 +18,11 @@ class ListTitlesAdapter(val list: List<TitleHandler>): RecyclerView.Adapter<List
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
         val itemViewModel = list[position]
         holder.mediaTitle.text = itemViewModel.title
         holder.mediaYear.text = itemViewModel.year.toString()
         holder.mediaType.text = itemViewModel.type
+        holder.mediaPlot.text = itemViewModel.plot
         Picasso.with(holder.mediaTitle.getContext()).load(itemViewModel.poster).into(holder.mediaPoster);
     }
 
@@ -33,6 +34,7 @@ class ListTitlesAdapter(val list: List<TitleHandler>): RecyclerView.Adapter<List
         val mediaTitle = itemView.findViewById<TextView>(R.id.titleText)
         val mediaYear = itemView.findViewById<TextView>(R.id.releaseDate)
         val mediaType = itemView.findViewById<TextView>(R.id.typeText)
+        val mediaPlot = itemView.findViewById<TextView>(R.id.plotText)
         val mediaPoster = itemView.findViewById<ImageView>(R.id.posterView)
     }
 }
