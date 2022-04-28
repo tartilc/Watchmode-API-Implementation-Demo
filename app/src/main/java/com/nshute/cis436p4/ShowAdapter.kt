@@ -45,6 +45,7 @@ class ShowAdapter {
         return position
     }
 
+    /*
     fun onBindViewHolder(holder: ShowViewHolder, position: Int) {
         if (shows_list != null) {
             if (shows_list!![position].getDownloaded()) {
@@ -63,6 +64,8 @@ class ShowAdapter {
         }
     }
 
+     */
+
     fun getItemCount(): Int {
         return if (shows_list != null) shows_list!!.size else 0
     }
@@ -73,6 +76,7 @@ class ShowAdapter {
 
     class ShowViewHolder internal constructor(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
+        /*
         private val imgItemView: ImageView
         private val nameItemView: TextView
         private val descItemView: TextView
@@ -86,8 +90,8 @@ class ShowAdapter {
             countryItemView = itemView.findViewById(R.id.country_text)
             temperItemView = itemView.findViewById(R.id.temper_text)
         }
-    }
 
-}
+         */
+    }
 
 }

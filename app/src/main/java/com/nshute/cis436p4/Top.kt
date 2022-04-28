@@ -44,7 +44,7 @@ class Top : Fragment(), AdapterView.OnItemSelectedListener {
             spinner.onItemSelectedListener = this
         }
         if (searchButton.isPressed == true){
-            (activity as MainActivity?)?.displayTitles(genre)
+            //(activity as MainActivity?)?.displayTitles(genre)
         }
     }
 

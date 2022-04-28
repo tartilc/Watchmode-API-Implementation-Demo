@@ -17,11 +17,11 @@ import org.json.JSONException
 import java.io.IOException
 import java.lang.ref.WeakReference
 
-class MainActivity: AppCompatActivity(), AdapterView.OnItemSelectedListener {
+class MainActivity: AppCompatActivity() {
     var recyclerView: RecyclerView? = null
     var breeds: List<String>? = null
 
-    var totalCats: List<Cat>? = null
+    //var totalCats: List<Cat>? = null
     var filter: String? = null
     var catBreeds = arrayOf("Filter breed")
 
@@ -45,7 +45,9 @@ class MainActivity: AppCompatActivity(), AdapterView.OnItemSelectedListener {
         fm.beginTransaction().replace(R.id.topFragment, top).commit()
         fm.beginTransaction().replace(R.id.bottomFragment, bottom).commit()
     }
+}
 
+    /*
     class OkHttpHandler internal constructor(catListAdapter: CatListAdapter, context: Context) :
         AsyncTask<String?, Void?, String?>() {
         private val weakRefCatListAdap: WeakReference<CatListAdapter>
@@ -82,6 +84,7 @@ class MainActivity: AppCompatActivity(), AdapterView.OnItemSelectedListener {
             }
         }
 
+
         override fun doInBackground(params: Array<String?>): String? {
             val client = OkHttpClient().newBuilder()
                 .build()
@@ -115,4 +118,5 @@ class MainActivity: AppCompatActivity(), AdapterView.OnItemSelectedListener {
     fun displayTitles(genre: String){
         (bottom as Bottom).setGenre(genre)
     }
-}
+
+     */
