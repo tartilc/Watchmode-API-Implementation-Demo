@@ -17,12 +17,14 @@ class ListTitlesAdapter(val list: List<TitleHandler>): RecyclerView.Adapter<List
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
         val itemViewModel = list[position]
         holder.mediaTitle.text = itemViewModel.title
         holder.mediaYear.text = itemViewModel.year.toString()
         holder.mediaType.text = itemViewModel.type
-        Picasso.with(holder.mediaTitle.getContext()).load(itemViewModel.poster).into(holder.mediaPoster);
+        holder.mediaPlot.text = itemViewModel.plot_overview
+        Picasso.with(holder.mediaTitle.getContext()).load("https://i.imgur.com/ybgwzW9.jpeg").into(holder.mediaPoster)
+        //totally could have had this image as a static resource file but making API calls is cool
+        //Picasso.with(holder.mediaTitle.getContext()).load(itemViewModel.poster).into(holder.mediaPoster) //API limitation with media URLs
     }
 
     override fun getItemCount(): Int {
@@ -33,6 +35,7 @@ class ListTitlesAdapter(val list: List<TitleHandler>): RecyclerView.Adapter<List
         val mediaTitle = itemView.findViewById<TextView>(R.id.titleText)
         val mediaYear = itemView.findViewById<TextView>(R.id.releaseDate)
         val mediaType = itemView.findViewById<TextView>(R.id.typeText)
+        val mediaPlot = itemView.findViewById<TextView>(R.id.plotText)
         val mediaPoster = itemView.findViewById<ImageView>(R.id.posterView)
     }
 }

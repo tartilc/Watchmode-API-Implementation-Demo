@@ -7,9 +7,9 @@ interface APIService {
     //@GET("regions/?apiKey=tLJlKtXy2JBWzDRbaAPbZoQdxx2tbOxU2ZsJi87F")
     //fun getCountry (): retrofit2.Call<List<CountryHandler>>
 
-    @GET("genres/?apiKey=tLJlKtXy2JBWzDRbaAPbZoQdxx2tbOxU2ZsJi87F")
+    @GET("genres/?apiKey=ieWc4YgWaPP3ZSnFlyRvEPeOREytJdfj0AtCQm1M")
     fun getGenre (): retrofit2.Call<List<GenreHandler>>
 
-    @GET("list-titles/?apiKey=tLJlKtXy2JBWzDRbaAPbZoQdxx2tbOxU2ZsJi87F")//&genres= 32
+    @GET("list-titles/?apiKey=ieWc4YgWaPP3ZSnFlyRvEPeOREytJdfj0AtCQm1M")//&genres= 32
     fun getTitles (@Query("genres") genre: String): retrofit2.Call<ListTitlesHandler>
 }

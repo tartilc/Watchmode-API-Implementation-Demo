@@ -1,11 +1,13 @@
 package com.nshute.cis436p4
 
-import android.R.attr
 import android.os.Bundle
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
 
 
 class MainActivity: AppCompatActivity(), Communicator {
@@ -23,6 +25,13 @@ class MainActivity: AppCompatActivity(), Communicator {
         val fm: FragmentManager = supportFragmentManager
         fm.beginTransaction().replace(R.id.topFragment, top).commit()
         fm.beginTransaction().replace(R.id.bottomFragment, bottom).commit()
+
+        val fab: View = findViewById(R.id.fab)
+        fab.setOnClickListener(){
+                view ->
+        Snackbar.make(view, "Streaming data powered by Watchmode.com", Snackbar.LENGTH_LONG)
+            .setAction("MyAction", null).show()
+        }
     }
 
     override fun passData(ediTextInput: String) {
@@ -38,16 +47,4 @@ class MainActivity: AppCompatActivity(), Communicator {
         transaction.replace(R.id.bottomFragment,bottom)
         transaction.commit()
     }
-
-    /*
-    override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-    }
-
-    override fun onNothingSelected(p0: AdapterView<*>?) {
-    }
-
-    fun displayTitles(genre: String){
-        (bottom as Bottom).setGenre(genre)
-    }
-    */
 }

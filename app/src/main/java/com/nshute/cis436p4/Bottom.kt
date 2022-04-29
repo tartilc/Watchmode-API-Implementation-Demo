@@ -61,7 +61,9 @@ class Bottom : Fragment() {
                 override fun onFailure(
                     call: Call<ListTitlesHandler>,
                     t: Throwable
-                ) {
+                )
+
+                {
                     Log.e("ERROR", "FAILED")
                 }
 
@@ -78,5 +80,5 @@ class Bottom : Fragment() {
                 }
             })
         }
+        }
     }
-}
