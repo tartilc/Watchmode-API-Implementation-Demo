@@ -85,5 +85,6 @@ class Top : Fragment() {
                 spinner.setAdapter(spinnerAdapter)
             }
         })
+
     }
 }

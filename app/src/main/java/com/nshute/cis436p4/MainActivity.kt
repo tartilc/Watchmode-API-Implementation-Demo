@@ -18,12 +18,6 @@ class MainActivity: AppCompatActivity(), Communicator {
         fun newInstance() = MainActivity()
     }
 
-//    fun simplySnackbar(view: View?) {
-//        val snackbar = Snackbar.make(this, "This is Simple Snackbar", Snackbar.LENGTH_SHORT)
-//        snackbar.show()
-//    }
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -35,7 +29,7 @@ class MainActivity: AppCompatActivity(), Communicator {
         val fab: View = findViewById(R.id.fab)
         fab.setOnClickListener(){
                 view ->
-        Snackbar.make(view, "Email randomEmail@gmail.com for customer support.", Snackbar.LENGTH_LONG)
+        Snackbar.make(view, "Streaming data powered by Watchmode.com", Snackbar.LENGTH_LONG)
             .setAction("MyAction", null).show()
         }
     }

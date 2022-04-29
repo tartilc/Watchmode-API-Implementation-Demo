@@ -16,6 +16,6 @@ data class TitleHandler(
     @SerializedName("year")
     val year: Int,
 
-    @SerializedName("plot")
-    val plot: String
+    @SerializedName("plot_overview")
+    val plot_overview: String
 )

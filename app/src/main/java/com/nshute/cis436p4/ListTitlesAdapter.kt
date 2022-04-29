@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 
@@ -22,11 +21,10 @@ class ListTitlesAdapter(val list: List<TitleHandler>): RecyclerView.Adapter<List
         holder.mediaTitle.text = itemViewModel.title
         holder.mediaYear.text = itemViewModel.year.toString()
         holder.mediaType.text = itemViewModel.type
-        holder.mediaPlot.text = itemViewModel.plot
-        Picasso.get().load("@drawable/android.jpg").into(holder.mediaPoster)
-//        holder.itemView.setOnClickListener {
-//            Toast.makeText(this, holder.mediaTitle.text, Toast.LENGTH_SHORT).show()
-//        }
+        holder.mediaPlot.text = itemViewModel.plot_overview
+        Picasso.with(holder.mediaTitle.getContext()).load("https://i.imgur.com/ybgwzW9.jpeg").into(holder.mediaPoster)
+        //totally could have had this image as a static resource file but making API calls is cool
+        //Picasso.with(holder.mediaTitle.getContext()).load(itemViewModel.poster).into(holder.mediaPoster) //API limitation with media URLs
     }
 
     override fun getItemCount(): Int {

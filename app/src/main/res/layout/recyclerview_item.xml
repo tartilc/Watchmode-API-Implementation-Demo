@@ -5,91 +5,86 @@
     android:id="@+id/results"
     style="@style/CardView.Light"
     android:layout_width="match_parent"
-    android:layout_height="125dp"
-    app:cardCornerRadius="15dp"
-    app:cardBackgroundColor="@color/white">
+    android:layout_height="140dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/card"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:background="@color/ltGrey">
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/posterView"
-            android:layout_width="132dp"
-            android:layout_height="110dp"
-            android:layout_marginStart="16dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="2dp"
+            android:background="#C3000000"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.384" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/titleText"
-            android:layout_width="255dp"
-            android:layout_height="15dp"
-            android:layout_marginStart="6dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="5dp"
-            android:fontFamily="@font/alata"
-            android:textColor="@android:color/black"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.611"
-            app:layout_constraintStart_toEndOf="@+id/posterView"
-            app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/posterView"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/typeText"
-            android:layout_width="255dp"
-            android:layout_height="15dp"
-            android:layout_marginStart="6dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="5dp"
-            android:fontFamily="@font/alata"
-            android:textColor="@android:color/black"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.611"
-            app:layout_constraintStart_toEndOf="@+id/posterView"
-            app:layout_constraintTop_toBottomOf="@+id/titleText" />
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="255dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/alata"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/releaseDate"
-            android:layout_width="255dp"
-            android:layout_height="15dp"
-            android:layout_marginStart="6dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="5dp"
-            android:fontFamily="@font/alata"
-            android:textColor="@android:color/black"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.611"
-            app:layout_constraintStart_toEndOf="@+id/posterView"
-            app:layout_constraintTop_toBottomOf="@+id/typeText" />
+            <TextView
+                android:id="@+id/typeText"
+                android:layout_width="255dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/alata"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleText" />
 
-        <TextView
-            android:id="@+id/plotText"
-            android:layout_width="255dp"
-            android:layout_height="26dp"
-            android:layout_marginStart="7dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:fontFamily="@font/alata"
-            android:textColor="@android:color/black"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.583"
-            app:layout_constraintStart_toEndOf="@+id/posterView"
-            app:layout_constraintTop_toBottomOf="@+id/releaseDate"
-            app:layout_constraintVertical_bias="0.0" />
+            <TextView
+                android:id="@+id/releaseDate"
+                android:layout_width="255dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/alata"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/typeText" />
+
+            <TextView
+                android:id="@+id/plotText"
+                android:layout_width="255dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/alata"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/releaseDate" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.cardview.widget.CardView>
